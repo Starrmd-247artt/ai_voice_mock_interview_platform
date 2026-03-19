@@ -23,7 +23,7 @@ function WelcomeContainer() {
   console.log("User object:", user);
 
   return (
-    <div className='bg-black ml-10 pl-5 rounded-xl flex justify-between items-center'>
+    <div className='bg-black ml-10 mt-5 pl-5 rounded-xl flex justify-between items-center'>
       <div>
         <h2 className='text-white'>Welcome Back, {user.name}</h2>
         <h2 className='text-sm font-bold'>

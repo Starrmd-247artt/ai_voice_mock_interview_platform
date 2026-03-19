@@ -21,13 +21,13 @@ export function AppSidebar() {
   console.groupCollapsed(path);
   return (
     <Sidebar>
-      <SidebarHeader className='flex items-center mt-5'>
+      <SidebarHeader className='flex items mt-5'>
          <div className='flex items-center gap-3 mb-2'>
              <Image src={'/logo.svg'} alt='logo' 
                 width={100}
                 height={100}
                 className='w-[50px]'/>
-                <h2 className='text-primary-500'>PrepWise</h2>
+                <h2 className='text-primary-500'>VoxHire</h2>
          </div>
          <Button className='w-full mt-5'> <Plus/> Create New Interview</Button>
       </SidebarHeader> 
