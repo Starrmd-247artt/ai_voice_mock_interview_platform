@@ -571,39 +571,19 @@ function StartInterview() {
   const router=useRouter();
   const [loading, setLoading] = useState(false);
 
-  /*useEffect(() => {
-    if (!vapiRef.current) {
-      vapiRef.current = new Vapi(process.env.NEXT_PUBLIC_VAPI_API_KEY);
+  const generateFeedback = async (conversation) => {
+  const prompt = FEEDBACK_PROMPT.replace('{{conversation}}', conversation);
 
-      vapiRef.current.on("call-start", () => {
-        console.log("Call started");
-        setIsCallActive(true);
-        toast('Call Connected...')
+  const result = await fetch('/api/ai-feedback', {
+    method: 'POST',
+    body: JSON.stringify({ prompt }),
+  });
 
-         intervalRef.current = setInterval(() => {
-            setSeconds((prev) => prev + 1);
-            }, 1000);
-      });
+  const data = await result.json();
 
-      vapiRef.current.on("call-end", () => {
-        console.log("Call ended");
-        setIsCallActive(false);
-        toast('Interview Ended');
-        
-        clearInterval(intervalRef.current);
-        GenerateFeedback();
+  return data;
+};
 
-      });
-
-      vapiRef.current.on("message", (message) => {
-        if (message.type === "transcript") {
-          const transcriptLine = `${message.role}: ${message.transcript}`;
-          console.log(transcriptLine)
-          conversationRef.current += transcriptLine + "\n";
-        }
-      });
-    }
-  }, []); */
   useEffect(() => {
   if (!vapiRef.current) {
     vapiRef.current = new Vapi(process.env.NEXT_PUBLIC_VAPI_API_KEY);

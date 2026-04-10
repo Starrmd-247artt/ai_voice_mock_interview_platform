@@ -102,7 +102,7 @@ export default function Login() {
         />
 
         <h2 className="text-2xl font-bold text-center mt-5">
-          Welcome to PrepWise
+          Welcome to VoxHire
         </h2>
 
         <p className="text-gray-500 text-center">

@@ -125,17 +125,19 @@ for hire or not with msg. Give me response in JSON format
 
         rating:{
 
-            techicalSkills:5,
+            techicalSkills:0,
 
-            communication:6,
+            communication:0,
 
-            problemSolving:4,
+            problemSolving:0,
 
-            experince:7
+            experience:0,
+
+            totalRating:0
 
         },
-
-        summery:<in 3 Line>,
+        
+        summary:<in 3 Line>,
 
         Recommendation:'',
 
